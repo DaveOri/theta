@@ -22,13 +22,15 @@ CCPP=g++ #Compilatore da utilizzare
 OBJECTS=theta.o #File oggetto
 SRCS=theta.cpp #File sorgente
 
+LDLIBS += -lboost_program_options
+
 #target "theta" richiede $(OBJECTS) per compilare
 theta: $(OBJECTS)
-	$(CCPP) -o $@ $<
+	$(CCPP) -o $@ $< $(LDLIBS)
  
 #target "theta.o" richiede $(SRCS) per creare i file oggetto
 theta.o: $(SRCS)
-	$(CC) -c -o $@ $<
+	$(CCPP) -c -o $@ $<
 
 #target "clean" pulisce i file oggetto e il binario nella directory corrente 
 clean:
