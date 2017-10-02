@@ -1,23 +1,26 @@
-/*
-COPYRIGHT and blablas
-
-
-
-
-*/
-
 #include <boost/program_options.hpp>
+#include <iostream>
+using namespace std;
 namespace po = boost::program_options;
 
-#include <iostream>
-#include <iterator>
-using namespace std;
 
-po::options_description description("Allowed options");
-po::variables_map vm;
 
-int main(int argn, char* argv[]) {
-	cout<<"Hello worlds!"<<endl;
+class argument_parser {
+	public:
+		po::variables_map vm; // public member accessible from outside
+
+		argument_parser (int, char**);
+};
+
+
+
+
+// IMPLEMENTATIONS
+
+argument_parser::argument_parser(int argn, char** argv){
+	po::options_description description("Allowed options");
+	
+	cout<<"Parser created with "<<argn<<" arguments"<<endl;
 	description.add_options()
 		("help", "produce help message")
 		("lambda", po::value<double>(),"set lambda")
@@ -35,7 +38,5 @@ int main(int argn, char* argv[]) {
 	} else {
 		cout<<"lambda has not been set"<<endl;
 	}
-	
 
-	return 0;
-}
+};
