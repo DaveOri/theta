@@ -41,15 +41,7 @@ int main(int argn, char** argv) {
 
 	ifstream indata;
 	indata.open("../t-matrix/Tmatrix.txt");
-	string line;
-	while (getline(indata,line)) {
-		stringstream lineStream(line);
-		string cell;
-		while (getline(lineStream,cell,' ')) {
-			cout<<cell<<"\t";
-		}
-		cout<<endl;
-	}
+	Tmatrix T(indata);
 
 	return 0;
 }
