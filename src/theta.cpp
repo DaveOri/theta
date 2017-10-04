@@ -20,6 +20,7 @@ using Eigen::MatrixXd;
 using namespace std;
 
 #include "argument_parser.h"
+#include "Tmatrix.h"
 
 po::options_description description("Allowed options");
 po::variables_map vm;
