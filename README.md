@@ -1,7 +1,7 @@
-# theta
+# theta test branch
 T-matrix on HETerogeneous Architectures (provisional name, not sure I will be able to run it on multiple architectures)
 
-Still does not do anything useful.
+Still does not do anything useful. And this is a test branch as well
 Development is proceeding extremely slow due to lack of time
 
   * there is still no documentation and no instructions on how to use it
