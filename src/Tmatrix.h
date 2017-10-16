@@ -6,6 +6,8 @@ This will be a (template?) class to deal with generic complex T-matrix and retri
 */
 
 #include <eigen3/Eigen/Dense>
+//#include <eigen3/unsupported/Eigen/CX11/Tensor> // not included in packed eigen distribution Ubuntu 16.04
+
 #include <iostream>
 #include <vector>
 #include <fstream>

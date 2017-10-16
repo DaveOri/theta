@@ -17,20 +17,22 @@
 
 SHELL=/bin/sh #Shell da utilizzare per l'esecuzione dei comandi
 
-CCPP=g++ #Compilatore da utilizzare
+CXX=g++ #Compilatore da utilizzare
 
 OBJECTS=theta.o #File oggetto
 SRCS=theta.cpp #File sorgente
 
 LDLIBS += -lboost_program_options
 
+CXXFLAGS += -O2 -Wall #-std=c++1y
+
 #target "theta" richiede $(OBJECTS) per compilare
 theta: $(OBJECTS)
-	$(CCPP) -o $@ $< $(LDLIBS)
+	$(CXX) -o $@ $< $(LDLIBS)
  
 #target "theta.o" richiede $(SRCS) per creare i file oggetto
 theta.o: $(SRCS)
-	$(CCPP) -c -o $@ $<
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 #target "clean" pulisce i file oggetto e il binario nella directory corrente 
 clean:
