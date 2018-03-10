@@ -24,6 +24,8 @@ SRCS=theta.cpp argument_parser.cpp results.cpp #File sorgente
 
 LDLIBS += -lboost_program_options
 
+CXXFLAGS += -O2 -Wall #-std=c++1y
+
 #target "theta" richiede $(OBJECTS) per compilare
 theta: $(OBJECTS)
 	$(CCPP) -o $@ $^ $(LDLIBS)
